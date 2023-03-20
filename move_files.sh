@@ -35,7 +35,7 @@ do
 	FILE_NAME=$(basename $FILE)
 	printf "\nMoving $FILE to $NEW_DIR/$FILE_NAME"
 	mv $FILE $NEW_DIR/$FILE_NAME
-	FILE_COUNT=$($FILE_COUNT+1)
+	FILE_COUNT=$((FILE_COUNT+1))
 done
 
 printf "\n\nFile moving completed. Moved $FILE_COUNT files from $ORG_DIR to $NEW_DIR\n"
