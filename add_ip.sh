@@ -23,7 +23,8 @@ iptables -A INPUT -p tcp -s 0.0.0.0/0 --dport 22 -j DROP
 iptables -A INPUT -p tcp -s 0.0.0.0/0 --dport 111 -j DROP
 
 # Save the new rules
-/etc/init.d/iptables-persistent save
+iptables-save > /etc/iptables/rules.v4
+ip6tables-save > /etc/iptables/rules.v6
 
 # Show new IP INPUT chain
 printf "\nNEW IP INPUT chain:\n" 
